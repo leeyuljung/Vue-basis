@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-link :to="{path: '/Home'}">Home</router-link>
+    <router-link :to="{path: '/CtoF'}">CtoF</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -17,16 +15,10 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
+#app a{
+  margin: 1%;
+  text-decoration: none;
   color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  font-weight: bold;
 }
 </style>
