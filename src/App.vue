@@ -2,6 +2,7 @@
   <div id="app">
     <router-link :to="{path: '/Home'}">Home</router-link>
     <router-link :to="{path: '/CtoF'}">CtoF</router-link>
+    <router-link :to="{path: '/Count'}">Count</router-link>
     <router-view></router-view>
   </div>
 </template>
