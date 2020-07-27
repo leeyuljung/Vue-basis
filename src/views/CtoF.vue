@@ -2,7 +2,7 @@
     <div class="container">
         <!-- to control isCelsius is true or false -->
         <div class="toggle">
-            <button class="btn btn-primary" @click="isCelsius = !isCelsius">切換</button>
+            <button class="btn btn-info" @click="isCelsius = !isCelsius">切換</button>
         </div>
 
         <!-- input temperature -->

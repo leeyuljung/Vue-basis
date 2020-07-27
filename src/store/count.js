@@ -8,39 +8,34 @@ export const state = {
 
 
 // getters (to get state and provide for components to use)
-// export const getCount = state => {
-//     return state.count;
-// }
 export const getters = {
     getCount: state => state.count
 }
 
 
 // actions
-// export const setIncrease = ({commit}) => {
-//     commit(types.INCREASE);
-// }
-
-// export const setDecrease = ({commit}) => {
-//     commit(types.DECREASE);
-// }
-
 export const actions = {
-    setIncrease ({commit}){
-        commit(types.INCREASE);
+    setIncrease ({commit}, num){
+        commit(types.INCREASE, num);
     },
-    setDecrease ({commit}){
-        commit(types.DECREASE);
+    setDecrease ({commit}, num){
+        commit(types.DECREASE, num);
+    },
+    setCountReset ({commit}){
+        commit(types.COUNT_RESET);
     }
 }
 
 
 // mutations (only mutations can change state)
 export const mutations = {
-    [types.INCREASE] (state) {
-        state.count += 1;
+    [types.INCREASE] (state, num) {
+        state.count += num;
     },
-    [types.DECREASE] (state) {
-        state.count -= 1;
+    [types.DECREASE] (state, num) {
+        state.count -= num;
+    },
+    [types.COUNT_RESET] (state) {
+        state.count = 0;
     }
 }
