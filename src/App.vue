@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <router-link :to="{path: '/Home'}">Home</router-link>
-    <router-link :to="{path: '/CtoF'}">CtoF</router-link>
-    <router-link :to="{path: '/Count'}">Count</router-link>
+    <div class="nav justify-content-center">
+      <router-link :to="{path: '/Home'}">Home</router-link>
+      <router-link :to="{path: '/CtoF'}">CtoF</router-link>
+      <router-link :to="{path: '/Count'}">Count</router-link>
+      <router-link :to="{path: '/TodoList'}">TodoList</router-link>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -21,5 +24,13 @@
   text-decoration: none;
   color: #2c3e50;
   font-weight: bold;
+}
+
+ul, li{
+  list-style: none;
+}
+
+.nav{
+  background: #abc;
 }
 </style>
