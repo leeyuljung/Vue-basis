@@ -4,7 +4,7 @@ import * as types from './mutations-type';
 export const state = {
     count: 0,
     todos: [
-        { key: 0, content: 'task_00', done: true },
+        { key: 0, content: 'task_00', done: false },
         { key: 1, content: 'task_01', done: false },
         { key: 2, content: 'task_02', done: false },
         { key: 3, content: 'task_03', done: false },
@@ -40,6 +40,9 @@ export const actions = {
     },
     deleteTodo ({commit}, key){
         commit(types.DELETE_TODO, key)
+    },
+    updateTodo ({commit}, obj){
+        commit(types.UPDATE_TODO, obj)
     }
 }
 
@@ -66,6 +69,8 @@ export const mutations = {
         todoKey++;
     },
     [types.TOGGLE_DONE] (state, key) {
+        // find which one's key matches the one that we clicked
+
         // for(let i in state.todos){
         //     let todo = state.todos[i];
         //     if(todo.key === key){
@@ -86,5 +91,9 @@ export const mutations = {
         // }
         let index = state.todos.findIndex(todo => todo.key === key);
         state.todos.splice(index, 1);
+    }, 
+    [types.UPDATE_TODO] (state, obj) {
+        let todo = state.todos.find(todo => todo.key === obj.key);
+        todo.content = obj.change;
     }
 }

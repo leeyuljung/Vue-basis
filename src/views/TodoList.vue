@@ -3,24 +3,21 @@
         <div class="input-group">
             <input type="text" class="form-control" v-model="newTodo" placeholder="Add Todo..." @keyup.enter="addTodo">
             <div class="input-group-append">
-                <button class="btn btn-info" @click="addTodo">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true">ADD</span>
-                </button>
+                <button class="btn btn-info" @click="addTodo">ADD</button>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <p>Todo List</p>
                 <ul>
-                    <li v-for="todo in todoList" :key="todo.key">
+                    <!-- <li v-for="todo in todoList" :key="todo.key">
                         <label>
                             <input type="checkbox" :checked="todo.done" @change="toggleDone(todo.key)">
                             {{ todo.content }}
                         </label>
-                        <button class="btn btn-secondary btn-sm" @click="deleteTodo(todo.key)">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete</span>
-                        </button>
-                    </li>
+                        <button class="btn btn-secondary btn-sm" @click="deleteTodo(todo.key)">Delete</button>
+                    </li> -->
+                    <TodoItem v-for="todo in todoList" :key="todo.key" :todo="todo"/>
                 </ul>      
             </div>
             <div class="col-md-6">
@@ -40,8 +37,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import TodoItem from '@/components/TodoItem.vue';
 
 export default {
+    components: {
+        TodoItem
+    },
     data() {
         return {
             newTodo: ''
@@ -57,7 +58,7 @@ export default {
             'deleteTodo'
         ]),
         addTodo() {
-            // if there are only a few actions -> use dispatch way.
+            // if there are only a few actions -> use dispatch method.
             // if there are many actions -> use mapActions.
             this.$store.dispatch('addTodo', this.newTodo);
             // clear value
