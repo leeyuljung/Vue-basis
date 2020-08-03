@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import CtoF from '../views/CtoF.vue'
 import Count from '../views/Count.vue'
 import TodoList from '../views/TodoList.vue'
+import Shop from '../views/Shop.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
     path: '/TodoList',
     name: 'TodoList',
     component: TodoList
+  },
+  {
+    path: '/Shop',
+    name: 'Shop',
+    component: Shop
   },
   // {
   //   path: '/*',

@@ -36,6 +36,7 @@ export default {
             updateMode: false
         }
     },
+    // 自定義
     directives: {
         focus (el, {value}, {context}) {
             if(value) {

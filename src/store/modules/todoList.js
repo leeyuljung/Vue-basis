@@ -1,8 +1,13 @@
-import * as types from './mutations-type';
+// mutations-type
+const types = {
+    ADD_TODO: 'ADD_TODO',
+    TOGGLE_DONE: 'TOGGLE_DONE',
+    DELETE_TODO: 'DELETE_TODO',
+    UPDATE_TODO: 'UPDATE_TODO'
+}
 
 // state
-export const state = {
-    count: 0,
+const state = {
     todos: [
         { key: 0, content: 'task_00', done: false },
         { key: 1, content: 'task_01', done: false },
@@ -12,26 +17,14 @@ export const state = {
     ]
 }
 
-
 // getters (to get state and provide for components to use)
-export const getters = {
-    getCount: state => state.count,
+const getters = {
     getUndoneTodos: state => state.todos.filter(todo => !todo.done),
     getDoneTodos: state => state.todos.filter(todo => todo.done)
 }
 
-
 // actions
-export const actions = {
-    setIncrease ({commit}, num){
-        commit(types.INCREASE, num);
-    },
-    setDecrease ({commit}, num){
-        commit(types.DECREASE, num);
-    },
-    setCountReset ({commit}){
-        commit(types.COUNT_RESET);
-    },
+const actions = {
     addTodo ({commit}, newTodo){
         commit(types.ADD_TODO, newTodo);
     },
@@ -46,19 +39,8 @@ export const actions = {
     }
 }
 
-
-
 // mutations (only mutations can change state)
-export const mutations = {
-    [types.INCREASE] (state, num) {
-        state.count += num;
-    },
-    [types.DECREASE] (state, num) {
-        state.count -= num;
-    },
-    [types.COUNT_RESET] (state) {
-        state.count = 0;
-    },
+const mutations = {
     [types.ADD_TODO] (state, newTodo) {
         let todoKey = state.todos.length
         state.todos.push({
@@ -96,4 +78,11 @@ export const mutations = {
         let todo = state.todos.find(todo => todo.key === obj.key);
         todo.content = obj.change;
     }
+}
+
+export default {
+    state,
+    getters,
+    actions,
+    mutations
 }

@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { state, getters, actions, mutations } from './count';
+import count from './modules/count';
+import todoList from './modules/todoList';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state,
-  getters,
-  actions,
-  mutations
+  modules: {
+    count,
+    todoList
+  }
 })

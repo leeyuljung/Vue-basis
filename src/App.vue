@@ -5,6 +5,7 @@
       <router-link :to="{path: '/CtoF'}">CtoF</router-link>
       <router-link :to="{path: '/Count'}">Count</router-link>
       <router-link :to="{path: '/TodoList'}">TodoList</router-link>
+      <router-link :to="{path: '/Shop'}">Shop</router-link>
     </div>
     <router-view></router-view>
   </div>
