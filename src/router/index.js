@@ -5,6 +5,7 @@ import CtoF from '../views/CtoF.vue'
 import Count from '../views/Count.vue'
 import TodoList from '../views/TodoList.vue'
 import Shop from '../views/Shop.vue'
+import Cart from '../views/Cart.vue'
 
 Vue.use(VueRouter)
 
@@ -38,6 +39,11 @@ const routes = [
     path: '/Shop',
     name: 'Shop',
     component: Shop
+  },
+  {
+    path: '/Cart',
+    name: 'Cart',
+    component: Cart
   },
   // {
   //   path: '/*',

@@ -17,7 +17,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 #app a{
@@ -32,6 +31,6 @@ ul, li{
 }
 
 .nav{
-  background: #abc;
+  background: #f9f0c7;
 }
 </style>
