@@ -1,24 +1,8 @@
-# vue_example
+# Vuejs-starter
 
-## Project setup
-```
-npm install
-```
+練習了一些小例子在網站中。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. 溫度單位轉換
+2. 簡易將商品選購至購物車
+3. To-do List
+4. 計數器
