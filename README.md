@@ -1,8 +1,8 @@
-# Vuejs-starter
+# Vue-basis
 
-用 Vue.js 及 Vuex 練習了一些小例子在網站中。
+用 Vue.js 及 Vuex 練習小例子。
 
-- 計數器
-- 溫度單位轉換
-- To-do List
-- 簡易購物車
+- Counter
+- Temperature converter
+- To-Do List
+- Simple shopping cart
